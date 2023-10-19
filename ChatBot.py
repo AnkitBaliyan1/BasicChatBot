@@ -3,7 +3,7 @@ import openai
 from streamlit_chat import message
 
 
-openai.api_key = OPNEAI_KEY
+openai.api_key = OPENAI_KEY
 
 def generate_response(user_input):
     response = openai.Completion.create(
