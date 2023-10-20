@@ -23,7 +23,7 @@ if st.button("Submit"):
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
 
-    st.write(response)
+    #st.write(response)
 
 
 if st.session_state['generated']:
