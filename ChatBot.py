@@ -8,7 +8,6 @@ openai.api_key = st.secrets['OPENAI_KEY']
 
 # funciton that generate response 
 def getresponse(prompt):
-    
     response = openai.ChatCompletion.create(
         engine="text-davinci-003",
         prompt=prompt,
@@ -24,10 +23,7 @@ def getresponse(prompt):
     return message
 
 
-
 # title and subtitle of the app
-st.title('OpenAI GPT-3 Streamlit Demo')
-st.subheader('Demo chatbot')
 
 # storing past history of chat.
 if 'generated' not in st.session_state:
@@ -37,19 +33,30 @@ if 'past' not in st.session_state:
     st.session_state['past'] = []
 
 
-# App starts from here 
-userInput = st.text_area("Enter Some Text:", height=100)
 
-if st.button("Submit"):
-    response = getresponse(userInput)
 
-    st.session_state.past.append(userInput)
-    st.session_state.generated.append(response)
+def main():
 
-    #st.write(OPENAI_KEY)
+    st.title('OpenAI GPT-3 Streamlit Demo')
+    st.subheader('Demo chatbot')
 
-if st.session_state['generated']:
+    # App starts from here 
+    userInput = st.text_area("Enter Some Text:", height=100)
 
-    for i in range(len(st.session_state['generated'])-1, -1, -1):
-        message(st.session_state["generated"][i], key=str(i))
-        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+    if st.button("Submit"):
+        response = getresponse(userInput)
+
+        st.session_state.past.append(userInput)
+        st.session_state.generated.append(response)
+
+        #st.write(OPENAI_KEY)
+
+    if st.session_state['generated']:
+
+        for i in range(len(st.session_state['generated'])-1, -1, -1):
+            message(st.session_state["generated"][i], key=str(i))
+            message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+
+    
+if __name__=='__main__':
+    main()
