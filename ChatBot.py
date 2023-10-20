@@ -1,12 +1,29 @@
 import streamlit as st
 from streamlit_chat import message
+import openai
+
+openai.api_key = "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"
+
+
+# funciton that generate response 
+def getresponse(prompt):
+    response=openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        temperature = 0.5,
+        stop=None,
+        max_token=30
+    )
+    
+    message = response.choices[0].text 
+    
+    return message
 
 
 
+# title and subtitle of the app
 st.title('OpenAI GPT-3 Streamlit Demo')
 st.subheader('Demo chatbot')
-
-userInput = st.text_area("Enter Some Text:", height=100)
 
 # storing past history of chat.
 if 'generated' not in st.session_state:
@@ -16,12 +33,8 @@ if 'past' not in st.session_state:
     st.session_state['past'] = []
 
 
-
-def getresponse(prompt):
-    message = prompt 
-    
-    return message
-
+# App starts from here 
+userInput = st.text_area("Enter Some Text:", height=100)
 
 if st.button("Submit"):
     response = getresponse(userInput)
