@@ -18,7 +18,7 @@ if 'past' not in st.session_state:
 
 
 def getresponse(prompt):
-    message = str("your output is : ",prompt)
+    message = prompt 
     
     return message
 
