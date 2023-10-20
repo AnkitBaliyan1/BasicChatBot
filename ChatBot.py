@@ -31,7 +31,6 @@ if 'past' not in st.session_state:
 userInput = st.text_area("Enter Some Text:", height=100)
 
 if st.button("Submit"):
-    userInput = st.text_area("Enter Some Text:", height=100)
     st.text_area("", height=150)
 
     st.session_state.past.append(userInput)
