@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_chat import message
 import openai
 
-openai.api_key = "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"
+openai.api_key = 
 
 
 # funciton that generate response 
