@@ -9,7 +9,7 @@ openai.api_key = st.secrets['OPENAI_KEY']
 # funciton that generate response 
 def getresponse(prompt):
     
-    response = openai.Completion.create(
+    response = openai.ChatCompletion.create(
         engine="text-davinci-003",
         prompt=prompt,
         temperature=0.5,
