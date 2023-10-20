@@ -17,8 +17,14 @@ if 'past' not in st.session_state:
 
 
 
+def getresponse(prompt):
+    message = str("your output is : ",prompt)
+    
+    return message
+
+
 if st.button("Submit"):
-    response = ("You are searching for :",userInput)
+    response = getresponse(userInput)
 
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
