@@ -3,6 +3,7 @@ from streamlit_chat import message
 import openai
 
 #openai.api_key = OPENAI_KEY
+openai.apik_key=st.secrets['OPENAI_KEY']
 
 
 # funciton that generate response 
