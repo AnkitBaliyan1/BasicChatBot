@@ -39,6 +39,7 @@ if st.button("Submit"):
     #st.write(OPENAI_KEY)
 
 if st.session_state['generated']:
+    st.text_area("", height=150)
 
     for i in range(len(st.session_state['generated'])-1, -1, -1):
         message(st.session_state["generated"][i], key=str(i))
