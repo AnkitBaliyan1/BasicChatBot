@@ -36,7 +36,7 @@ if st.button("Submit"):
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
 
-    #st.write(response)
+    st.write(OPENAI_KEY)
 
 if st.session_state['generated']:
 
