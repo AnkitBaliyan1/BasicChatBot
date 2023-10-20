@@ -16,11 +16,9 @@ def getresponse(prompt):
     max_tokens=100,
     stop=None,
     n=2
-)
-
+    )
 
     message = response.choices[0].text
-
     #message = prompt 
     
     return message
