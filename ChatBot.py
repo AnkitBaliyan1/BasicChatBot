@@ -12,7 +12,8 @@ def getresponse(prompt):
         prompt=prompt,
         temperature = 0.5,
         stop=None,
-        max_token=30
+        max_token=30,
+        n=1
     )
     
     message = response.choices[0].text 
