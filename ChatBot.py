@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_chat import message
 import openai
 
-openai.api_key = OPENAI_KEY
+#openai.api_key = OPENAI_KEY
 
 
 # funciton that generate response 
@@ -36,7 +36,7 @@ if st.button("Submit"):
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
 
-    st.write(OPENAI_KEY)
+    #st.write(OPENAI_KEY)
 
 if st.session_state['generated']:
 
