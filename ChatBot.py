@@ -32,6 +32,7 @@ userInput = st.text_area("Enter Some Text:", height=100)
 
 if st.button("Submit"):
     response = getresponse(userInput)
+    st.text_area("", height=150)
 
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
@@ -39,7 +40,6 @@ if st.button("Submit"):
     #st.write(OPENAI_KEY)
 
 if st.session_state['generated']:
-    st.text_area("", height=150)
 
     for i in range(len(st.session_state['generated'])-1, -1, -1):
         message(st.session_state["generated"][i], key=str(i))
