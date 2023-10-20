@@ -3,7 +3,7 @@ from streamlit_chat import message
 import openai
 
 #openai.api_key = OPENAI_KEY
-openai.apik_key=st.secrets['OPENAI_KEY']
+openai.key = st.secrets['OPENAI_KEY']
 
 
 # funciton that generate response 
@@ -32,7 +32,7 @@ if 'past' not in st.session_state:
 userInput = st.text_area("Enter Some Text:", height=100)
 
 if st.button("Submit"):
-    st.text_area("", height=150)
+    response = getresponse(userInput)
 
     st.session_state.past.append(userInput)
     st.session_state.generated.append(response)
