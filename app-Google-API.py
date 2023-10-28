@@ -96,7 +96,6 @@ def main():
         st.title("LLM using ChatGPT")
         st.header("LLM Version 2.0")
         system, user = define_parameters()
-
         if st.button("Get Response"):
             with st.spinner(text="In Progress"):
                 st.write(generate_response(system, user))
