@@ -2,8 +2,8 @@ import google.generativeai as palm
 import openai
 import streamlit as st
 
-#openai.api_key = st.secrets['OPENAI_KEY']
-#google_api_key=st.secrets['GoogleAI_KEY']
+openai.api_key = st.secrets['OPENAI_KEY']
+google_api_key=st.secrets['GoogleAI_KEY']
 
 palm.configure(api_key=google_api_key)
 
