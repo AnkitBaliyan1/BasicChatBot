@@ -49,8 +49,14 @@ Before using the application, ensure you have the following prerequisites:
 
 3. Run the Streamlit application:
 
+   To run the base version - single mode
    ```bash
-   streamlit run app.py
+   streamlit run ver-2.0.py
+   ```
+
+   To run the upgraded version - multimodel
+   ```bash
+   streamlit run app-Google-API.py
    ```
 
 4. Access the chatbot through your web browser (usually at http://localhost:8501).
